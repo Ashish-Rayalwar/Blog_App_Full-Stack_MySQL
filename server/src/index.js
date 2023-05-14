@@ -7,8 +7,8 @@ const user = require("./routes/userRoutes");
 const post = require("../src/routes/postRoutes");
 const app = express();
 
-// app.use(cors());
-app.use(cors({ origin: "http://localhost:3000" }));
+app.use(cors());
+// app.use(cors({ origin: "http://localhost:3000" }));
 app.use(express.json());
 app.use(multer().any());
 app.use(express.static(path.join(__dirname, "../build")));
