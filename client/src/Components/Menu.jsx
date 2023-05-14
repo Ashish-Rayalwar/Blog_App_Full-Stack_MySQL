@@ -7,7 +7,8 @@ const Menu = ({ cat }) => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    api(`/post/?cat=${cat}`)
+    api
+      .get(`/post/?cat=${cat}`)
       .then((res) => {
         console.log(res.data.data);
         setPosts(res.data.data);
