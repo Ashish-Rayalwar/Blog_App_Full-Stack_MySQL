@@ -12,6 +12,7 @@ app.use(cors());
 app.use(express.json());
 app.use(multer().any());
 app.use(express.static(path.join(__dirname, "../build")));
+// app.use(express.static(path.join(__dirname, "../build")));
 app.use("/api/users", user);
 app.use("/api/post", post);
 const port = process.env.PORT || 5000;
@@ -23,3 +24,8 @@ app.get("*", (req, res) => {
   const file = path.join(__dirname, "../build/index.html");
   res.sendFile(file);
 });
+
+// app.get("*", (req, res) => {
+//   const file = path.join(__dirname, "../build/index.html");
+//   res.sendFile(file);
+// });
