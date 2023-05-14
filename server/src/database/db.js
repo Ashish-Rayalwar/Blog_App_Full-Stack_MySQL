@@ -9,7 +9,7 @@ const db = sql.createConnection({
 });
 
 db.connect((err) => {
-  if (err) return resizeBy.send(err.message);
+  if (err) return res.send(err.message);
 
   console.log("Connected to MySQL database!");
 });
