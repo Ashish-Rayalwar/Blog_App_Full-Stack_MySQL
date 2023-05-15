@@ -130,7 +130,7 @@ const Edit = () => {
           <div className="cat">
             <input
               type="radio"
-              checked={post.cat === "Art"}
+              checked={post.cat === "art"}
               name="cat"
               value="art"
               id="art"
@@ -141,7 +141,7 @@ const Edit = () => {
           <div className="cat">
             <input
               type="radio"
-              checked={post.cat === "Science"}
+              checked={post.cat === "science"}
               name="cat"
               value="science"
               id="science"
@@ -152,7 +152,7 @@ const Edit = () => {
           <div className="cat">
             <input
               type="radio"
-              checked={post.cat === "Technology"}
+              checked={post.cat === "technology"}
               name="cat"
               value="technology"
               id="technology"
@@ -163,7 +163,7 @@ const Edit = () => {
           <div className="cat">
             <input
               type="radio"
-              checked={post.cat === "Cinema"}
+              checked={post.cat === "cinema"}
               name="cat"
               value="cinema"
               id="cinema"
@@ -174,7 +174,7 @@ const Edit = () => {
           <div className="cat">
             <input
               type="radio"
-              checked={post.cat === "Design"}
+              checked={post.cat === "design"}
               name="cat"
               value="design"
               id="design"
@@ -185,7 +185,7 @@ const Edit = () => {
           <div className="cat">
             <input
               type="radio"
-              checked={post.cat === "Food"}
+              checked={post.cat === "food"}
               name="cat"
               value="food"
               id="food"

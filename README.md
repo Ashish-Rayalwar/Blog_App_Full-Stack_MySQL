@@ -4,7 +4,7 @@
 
 ## technology - Node | Express | SQL | MySQL
 
-### Project Link ==> https://threedshopmernproject.onrender.com
+### Project Link ==> https://blogapplication-us2r.onrender.com/
 
 ### Overview - Simple blog app, where user can write,edit,delete blog
 
