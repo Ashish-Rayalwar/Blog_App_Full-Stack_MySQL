@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { api } from "../api/api";
 import { AuthContext } from "../context/authContext";
-
+import Logo from "../images/logo.png";
 const Login = () => {
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -35,6 +35,11 @@ const Login = () => {
 
   return (
     <div className="auth">
+      <div className="logo">
+        <Link className="link" to="/">
+          <img style={{ width: "100px" }} src={Logo} alt="" />
+        </Link>
+      </div>
       <form onSubmit={HandleSubmit}>
         <h1>LogIn</h1>
         <input

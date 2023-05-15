@@ -5,6 +5,7 @@ import { api } from "../api/api";
 
 function Register() {
   const navigate = useNavigate();
+  const [image, setImage] = useState(null);
   const [user, setUser] = useState({
     username: "",
     email: "",
@@ -15,12 +16,19 @@ function Register() {
     setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const handleImageChange = (event) => {
+    setImage(event.target.files[0]);
+  };
+
   const HandleSubmit = (e) => {
     e.preventDefault();
+    let formData = new FormData(e.target);
+    formData.append("img", image);
     api
-      .post("/users/signup", user)
+      .post("/users/signup", formData)
       .then((res) => {
         console.log(res.data);
+        console.log(image);
         // window.alert(res.data);
         navigate("/login");
       })
@@ -57,6 +65,17 @@ function Register() {
           name="password"
           onChange={HandleChange}
         />
+        <input
+          style={{ display: "none" }}
+          type="file"
+          id="file"
+          name="img"
+          onChange={handleImageChange}
+          // onChange={(e) => setFile(e.target.files[0])}
+        />
+        <label className="file" htmlFor="file">
+          Select Profile Image
+        </label>
         <button type="submit">SignUp</button>
         {error && <p>{error}</p>}
 

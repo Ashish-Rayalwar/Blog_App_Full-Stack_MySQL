@@ -55,9 +55,9 @@ const Edit = () => {
     formData.append("img", image);
 
     const quill = quillRef.current.getEditor();
-    const desc = quill.getText();
+    const descr = quill.getText();
     const date = moment(Date.now()).format("YYYY-MM-DD HH:mm:ss");
-    formData.append("desc", desc);
+    formData.append("descr", descr);
     formData.append("date", date);
     console.log(formData);
     setError("");
@@ -89,8 +89,8 @@ const Edit = () => {
           <ReactQuill
             className="editor"
             theme="snow"
-            name="desc"
-            value={post.desc}
+            name="descr"
+            value={post.descr}
             ref={quillRef}
           />
         </div>

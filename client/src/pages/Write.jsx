@@ -32,9 +32,9 @@ const Write = () => {
     let formData = new FormData(e.target);
     formData.append("img", image);
     const quill = quillRef.current.getEditor();
-    const desc = quill.getText();
+    const descr = quill.getText();
     const date = moment(Date.now()).format("YYYY-MM-DD HH:mm:ss");
-    formData.append("desc", desc);
+    formData.append("descr", descr);
     formData.append("date", date);
 
     setError("");
@@ -42,37 +42,14 @@ const Write = () => {
       .post("/post", formData)
       .then((response) => {
         console.log(response.data.data);
+        console.log(image);
         window.alert("file created successfully");
       })
       .catch((error) => {
         setError(error.response.data.message);
         console.log(error.response.data.message);
       });
-
-    // const imgUrl = await upload();
-    // console.log(imgUrl);
-
-    //   try {
-    //     state
-    //       ? await api.put(`/posts/${state.id}`, {
-    //           title,
-    //           desc: value,
-    //           cat,
-    //           img: file ? imgUrl : "",
-    //         })
-    //       : await api.post(`/posts/`, {
-    //           title,
-    //           desc: value,
-    //           cat,
-    //           img: file ? imgUrl : "",
-    //           date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
-    //         });
-    //     navigate("/");
-    //   } catch (err) {
-    //     console.log(err);
-    //   }
   };
-
   return (
     <form className="add" onSubmit={handleClick}>
       <div className="content">

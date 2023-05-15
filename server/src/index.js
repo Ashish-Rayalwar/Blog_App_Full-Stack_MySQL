@@ -16,6 +16,7 @@ app.use(multer().any());
 app.use("/api/users", user);
 app.use("/api/post", post);
 const port = process.env.PORT || 5000;
+
 app.listen(port, () => {
   console.log("server start");
 });
